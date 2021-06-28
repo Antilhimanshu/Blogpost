@@ -1,0 +1,209 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>ScriBBler - Project</title>
+		<link rel="stylesheet" href="header.css" />
+		<link rel="stylesheet" href="index.css" />
+		
+		<link
+			href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap"rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap"rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<header id="header">
+			<div id="logo_container">
+				<div id="logo">ScriBBler</div>
+				<div id="logo_tag">Explore, Imagine, Create</div>
+			</div>
+			<div id="button_container">
+				<button id="btn_sign_in" onclick="showSignInModal()">
+					Sign In</button
+				><button id="btn_sign_up" onclick="showSignUpModal()">
+					Sign Up
+				</button>
+			</div>
+		</header>
+
+		
+		<div id="signUpModal" class="modal">
+			
+			<div class="modal-content">
+				<span class="close">&times;</span>
+				<div class="modal_header">
+					<h2>Get Started</h2>
+					<hr />
+				</div>
+				<form
+					action="GET"
+					onsubmit="window.alert('Submitted'); event.preventDefault();"
+				>
+					<div class="input_container">
+						<div>
+							<label for="full_name">Full Name</label>
+						</div>
+						<input
+							required
+							type="text"
+							name="full_name"
+							id="full_name"
+							placeholder="Enter Full Name"
+						/>
+					</div>
+					<div class="input_container">
+						<div>
+							<label for="user_name">Username</label>
+						</div>
+						<input
+							required
+							type="text"
+							name="user_name"
+							id="user_name"
+							placeholder="Enter Username"
+						/>
+					</div>
+					<div class="input_container">
+						<div>
+							<label for="password">Password</label>
+						</div>
+						<input
+							required
+							type="password"
+							name="password"
+							id="password"
+							placeholder="Enter Password"
+						/>
+					</div>
+					<div class="input_container">
+						<div>
+							<label for="confirm_password"
+								>Confirm Password</label
+							>
+						</div>
+						<input
+							required
+							type="password"
+							name="confirm_password"
+							id="confirm_password"
+							placeholder="Confirm Password"
+						/>
+					</div>
+					<button id="sign_up" type="submit">
+						Sign Up
+					</button>
+				</form>
+			</div>
+		</div>
+		<div id="signInModal" class="modal">
+			<div class="modal-content">
+				<span class="close">&times;</span>
+				<div class="modal_header">
+					<h2>Welcome Back!</h2>
+					<hr />
+				</div>
+
+				<form
+					action="GET"
+					onsubmit="window.alert('Submitted'); event.preventDefault();"
+				>
+					<div class="input_container">
+						<div>
+							<label for="signin_user_name">Username</label>
+						</div>
+						<input
+							required
+							type="text"
+							name="signin_user_name"
+							id="signin_user_name"
+							placeholder="Enter Username"
+						/>
+					</div>
+					<div class="input_container">
+						<div>
+							<label for="signin_password">Password</label>
+						</div>
+						<input
+							required
+							type="password"
+							name="signin_password"
+							id="signin_password"
+							placeholder="Enter Password"
+						/>
+					</div>
+					<button id="sign_in" type="submit">
+						Sign In
+					</button>
+					<div class="sign_in_modal_footer">
+						Not a member?
+						<a href="#" onclick="raiseSignUp()">Sign Up</a>
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<div id="composePostModal" class="modal">
+			<div class="modal-content">
+				<span class="close">&times;</span>
+				<div class="modal_header">
+					<h2>Pen Your Post</h2>
+				</div>
+
+				<form
+					action="GET"
+					onsubmit="window.alert('Submitted'); event.preventDefault();"
+				>
+					<div class="input_container">
+						<div>
+							<label for="compose_post_title">Title:</label>
+						</div>
+						<input
+							required
+							type="text"
+							name="compose_post_title"
+							id="compose_post_title"
+						/>
+					</div>
+					<div class="input_container">
+						<div>
+							<label for="compose_post_content">Content</label>
+						</div>
+						<textarea
+							required
+							name="compose_post_content"
+							id="compose_post_content"
+						></textarea>
+					</div>
+					<button id="create_post" type="submit">
+						Create
+					</button>
+				</form>
+			</div>
+		</div>
+
+		<div id="container">
+			<div class="button_container">
+				<button
+					id="all_posts"
+					onclick="location.href='bloglist.html'"
+				>
+					All Posts
+				</button>
+				<button
+					id="create_post1"
+					onsubmit=""
+					onclick="showComposePostModal()"
+				>
+					Create Post
+				</button>
+			</div>
+		</div>
+
+		<script src="index.js" type="text/javascript" async></script>
+	</body>
+</html>

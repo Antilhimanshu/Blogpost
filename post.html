@@ -1,0 +1,203 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="header.css" />
+		<link rel="stylesheet" href="post.css" />
+		
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+		/>
+		
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<header id="header">
+			<div id="logo_container">
+				<div id="header_logo">ScriBBler</div>
+				<div id="header_logo_tag">Explore, Imagine, Create</div>
+			</div>
+			<div id="button_container">
+				<button id="btn_sign_in" onclick="showSignInModal()">
+					Sign In</button
+				><button id="btn_sign_up" onclick="showSignUpModal()">
+					Sign Up
+				</button>
+			</div>
+		</header>
+
+		
+		<div id="signUpModal" class="modal">
+			
+			<div class="modal-content">
+				<span class="close">&times;</span>
+				<div class="modal_header">
+					<h2>Get Started</h2>
+					<hr />
+				</div>
+				<form action="POST">
+					<div class="input_container">
+						<div>
+							<label for="full_name">Full Name</label>
+						</div>
+						<input
+							required
+							type="text"
+							name="full_name"
+							id="full_name"
+							placeholder="Enter Full Name"
+						/>
+					</div>
+					<div class="input_container">
+						<div>
+							<label for="user_name">Username</label>
+						</div>
+						<input
+							required
+							type="text"
+							name="user_name"
+							id="user_name"
+							placeholder="Enter Username"
+						/>
+					</div>
+					<div class="input_container">
+						<div>
+							<label for="password">Password</label>
+						</div>
+						<input
+							required
+							type="password"
+							name="password"
+							id="password"
+							placeholder="Enter Password"
+						/>
+					</div>
+					<div class="input_container">
+						<div>
+							<label for="confirm_password"
+								>Confirm Password</label
+							>
+						</div>
+						<input
+							required
+							type="password"
+							name="confirm_password"
+							id="confirm_password"
+							placeholder="Confirm Password"
+						/>
+					</div>
+					<button id="btn_sign_up_submit" type="submit">
+						Sign Up
+					</button>
+				</form>
+			</div>
+		</div>
+
+		
+		<div id="signInModal" class="modal">
+		
+			<div class="modal-content">
+				<span class="close">&times;</span>
+				<div class="modal_header">
+					<h2>Welcome Back!</h2>
+					<hr />
+				</div>
+
+				<form action="POST">
+					<div class="input_container">
+						<div>
+							<label for="signin_user_name">Username</label>
+						</div>
+						<input
+							required
+							type="text"
+							name="signin_user_name"
+							id="signin_user_name"
+							placeholder="Enter Username"
+						/>
+					</div>
+					<div class="input_container">
+						<div>
+							<label for="signin_password">Password</label>
+						</div>
+						<input
+							required
+							type="password"
+							name="signin_password"
+							id="signin_password"
+							placeholder="Enter Password"
+						/>
+					</div>
+					<button id="btn_sign_in_submit" type="submit">
+						Sign In
+					</button>
+					<div class="sign_in_modal_footer">
+						Not a member?
+						<a href="#" onclick="raiseSignUp()">Sign Up</a>
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<div id="post_container">
+			<div id="post_heading" contenteditable="true">
+				<h1>The legacy of Jimi Hendrix</h1>
+			</div>
+			<div id="author_edit_post">
+				<h2><span id="author_name">Jimi</span></h2>
+				<button id="btn_edit_post">
+					Edit
+					<i class="fas fa-edit"></i>
+				</button>
+			</div>
+			<div id="post_body">
+				James Marshall "Jimi" Hendrix (born Johnny Allen Hendrix; 
+                November 27, 1942 – September 18, 1970) was an American musician,
+                 singer, and songwriter. Although his mainstream career spanned only four years,
+                  he is widely regarded as one of the most influential electric guitarists in
+                   the history of popular music, and one of the most celebrated musicians of
+                    the 20th century. The Rock and Roll Hall of Fame describes him as
+                     "arguably the greatest instrumentalist in the history of rock music"
+			</div>
+			<button id="btn_like" class="btn_to_left" onclick="describeLikes()">
+				<i class="fas fa-thumbs-up"></i> Like
+			</button>
+			<div id="like_counter"></div>
+			<textarea
+				name="comment_composer"
+				id="comment_composer"
+				rows="10"
+				placeholder="Leave a comment..."
+			></textarea>
+			<button id="btn_comment" class="btn_to_left" onclick="addComment()">
+				Comment
+			</button>
+
+			<div id="comments_container">
+				<h3>All Comments</h3>
+                <ul id="post_comments">
+					
+			</ul>
+				
+			</div>
+		</div>
+
+		<script src="post.js" type="text/javascript" async></script>
+	</body>
+</html>
